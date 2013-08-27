@@ -1,0 +1,17 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+VAGRANTFILE_API_VERSION = "2"
+
+Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
+  config.vm.box = "precise32"
+  config.vm.box_url = "http://files.vagrantup.com/precise32.box"
+  config.vm.provision :shell, :path => "./setup/deb-deps.sh"
+  config.vm.provision :shell, :path => "./setup/fetch-sources.sh"
+  config.vm.provision :shell, :path => "./setup/postgis-install.sh"
+  config.vm.provision :shell, :path => "./setup/postgis-setup.sh"
+  config.vm.provision :shell, :path => "./setup/python-deps.sh"
+  config.vm.provision :shell, :path => "./setup/node-deps.sh"
+  config.vm.provision :shell, :path => "./setup/ruby-deps.sh"
+  config.vm.provision :shell, :path => "./setup/cartodb-setup.sh"
+end
