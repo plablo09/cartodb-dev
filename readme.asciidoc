@@ -12,7 +12,7 @@ cd cartodb-dev
 vagrant up
 ----
 
-As CartoDB is pretty heavy, the script takes quite some time to download the required dependencies. Once the provisioning is done, all your required to do is start CartoDB.
+As CartoDB is pretty heavy, the script takes quite some time to download the required dependencies. Once the provisioning is done, all you are required to do is start CartoDB.
 
 ----
 vagrant ssh
