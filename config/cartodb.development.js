@@ -1,4 +1,4 @@
-module.exports.base_url     = '/api/:version';
+module.exports.base_url     = '/api/v1/sql';
 module.exports.node_port    = 8080;
 module.exports.node_host    = '127.0.0.1';
 // idle socket timeout, in miliseconds
