@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-cd /usr/local/src/cartodb20
+cd /usr/local/src/cartodb
 
 easy_install pip
 pip install -r python_requirements.txt
