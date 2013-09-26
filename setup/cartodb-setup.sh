@@ -23,8 +23,8 @@ echo "127.0.0.1 ${USER}.localhost.lan" | sudo tee -a /etc/hosts
 
 bundle exec rake rake:db:create
 bundle exec rake rake:db:migrate
-bundle exec rake cartodb:db:create_user SUBDOMAIN="${USER}" PASSWORD="${PASSWORD}" EMAIL="${EMAIL}"
 bundle exec rake cartodb:db:create_publicuser
+bundle exec rake cartodb:db:create_user SUBDOMAIN="${USER}" PASSWORD="${PASSWORD}" EMAIL="${EMAIL}"
 bundle exec rake cartodb:db:create_importer_schema
 bundle exec rake cartodb:db:load_functions
 
