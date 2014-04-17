@@ -1,6 +1,6 @@
 This is a set of scripts to install a development environment for https://github.com/CartoDB/cartodb[CartoDB].
 
-It can be used either with or without http://www.vagrantup.com/[vagrant]
+It can be used either with or without http://www.vagrantup.com/[vagrant].
 
 ## Structure 
 
@@ -10,16 +10,16 @@ Base OS for this configuration in Vagrant terms is "precise32", which is an Ubun
 ```
 sudo apt-get update && sudo apt-get install -y git-core curl wget &&
 
-git clone git@github.com:stevage/cartodb-dev.git
+git clone http://github.com/stevage/cartodb-dev
 cd cartodb-dev
 
 # Edit settings file: vim settings
 
-./install-cartodb.sh
+bash install-cartodb.sh
 ```
 ## Running a VM with Vagrant:
 ```
-git clone git@github.com:stevage/cartodb-dev.git
+git clone http://github.com/stevage/cartodb-dev
 cd cartodb-dev
 
 # Edit settings file: vim settings
