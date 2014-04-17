@@ -49,9 +49,6 @@ bundle exec rake cartodb:db:set_unlimited_table_quota["${SUBDOMAIN}"]
 bundle exec rake cartodb:db:set_user_private_tables_enabled["${SUBDOMAIN}",'true']
 bundle exec rake cartodb:db:set_user_account_type["${SUBDOMAIN}",'[DEDICATED]']
 
-
-
-
 # Otherwise a stack overflow error.
 mkdir -p /usr/local/src/cartodb/logs
 
