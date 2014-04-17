@@ -1,15 +1,11 @@
 #!/usr/bin/env bash -e
-export USER=monkey
-export SUBDOMAIN=$USER
-export PASSWORD=monkey
-export ADMIN_PASSWORD=monkey
-export EMAIL=monkey@example.com
 
 sudo cp config/* /usr/local/etc
 
 cd setup
 chmod u+x *.sh
 sudo bash <<EOF
+source settings
 ./deb-deps.sh
 ./fetch-sources.sh
 ./postgis-install.sh
@@ -22,7 +18,7 @@ EOF
 
 
 sudo nohup redis-server &
-
+source settings # Probably not needed
 cd /usr/local/src/cartodb
 bundle install
 
