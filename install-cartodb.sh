@@ -1,19 +1,17 @@
 #!/usr/bin/env bash -e
 
 sudo cp config/* /usr/local/etc
-
-cd setup
-chmod u+x *.sh
+chmod u+x setup/*.sh
 sudo bash <<EOF
 source settings
-./deb-deps.sh
-./fetch-sources.sh
-./postgis-install.sh
-./postgis-setup.sh
-./python-deps.sh
-./node-deps.sh
-./ruby-deps.sh
-./cartodb-setup.sh 
+setup/deb-deps.sh
+setup/fetch-sources.sh
+setup/postgis-install.sh
+setup/postgis-setup.sh
+setup/python-deps.sh
+setup/node-deps.sh
+setup/ruby-deps.sh
+setup/cartodb-setup.sh 
 EOF
 
 

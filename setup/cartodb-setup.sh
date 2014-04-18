@@ -32,6 +32,8 @@ perl -p -i -e 's/^(    ,host:).*$/\1 '"''/g" /usr/local/src/Windshaft-cartodb/co
 perl -p -i -e 's/^(    ,mapnik_version:).*$/\1 '"'2.1.1'/g" /usr/local/src/Windshaft-cartodb/config/environments/development.js
 
 
+cd /usr/local/src/cartodb
+
 echo "127.0.0.1 ${USER}.localhost.lan" | sudo tee -a /etc/hosts
 export SUBDOMAIN=$USER
 bundle exec rake rake:db:create
