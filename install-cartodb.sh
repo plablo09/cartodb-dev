@@ -1,4 +1,4 @@
-#!/usr/bin/env bash -e
+#!/usr/bin/env bash
 
 sudo cp config/* /usr/local/etc
 chmod u+x setup/*.sh
@@ -20,5 +20,8 @@ source settings # Probably not needed
 cd /usr/local/src/cartodb
 bundle install
 
-sudo pkill redis
-sudo bundle exec foreman start -p 3000
+sleep 5s # Problem with user data getting lost from redis. Will this help?
+
+sudo pkill redis-server
+
+sudo foreman start -p 3000
