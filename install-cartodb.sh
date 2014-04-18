@@ -20,7 +20,7 @@ source settings # Probably not needed
 cd /usr/local/src/cartodb
 bundle install
 sleep 2s
-script/restore-redis
+script/restore_redis
 sleep 5s # Problem with user data getting lost from redis. Will this help?
 
 sudo pkill redis-server
