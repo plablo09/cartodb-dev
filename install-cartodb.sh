@@ -24,5 +24,5 @@ script/restore_redis
 sleep 5s # Problem with user data getting lost from redis. Will this help?
 
 sudo pkill redis-server
-
+at + 1 minutes script/restore_redis
 sudo foreman start -p 3000
