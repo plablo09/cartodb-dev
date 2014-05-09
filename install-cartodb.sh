@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
-
+# Install CartoDB for a development environment.
+# This script can be run from the Vagrantfile or manually. See the README.
 sudo cp config/* /usr/local/etc
 chmod u+x setup/*.sh
 sudo bash <<EOF

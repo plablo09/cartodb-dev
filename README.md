@@ -2,33 +2,40 @@ This is a set of scripts to install a development environment for https://github
 
 It can be used either with or without http://www.vagrantup.com/[vagrant].
 
-## Structure 
+## Installing without Vagrant
+Obtain a clean Ubuntu Precise VM.
 
-Base OS for this configuration in Vagrant terms is "precise32", which is an Ubuntu 12.04 LTS distro. A bunch of shell scripts does the provisioning. The installation procedure is split to many scripts in-order to isolate failure and facilitate reruns footnote:[Need to comment out previous steps in Vagrant file for now].
-
-## Installing inside a clean Ubuntu Precise VM
 ```
 sudo apt-get update && sudo apt-get install -y git-core curl wget &&
-
 git clone http://github.com/stevage/cartodb-dev
+
 cd cartodb-dev
 
 # Edit settings file: vim settings
 
 bash install-cartodb.sh
 ```
-## Running a VM with Vagrant:
+
+
+## Installing with Vagrant
+
+The base OS for this configuration in Vagrant terms is "precise32", which is an Ubuntu 12.04 LTS distro. The shell scripts
+are sync'ed inside the VM, then run to do the provisioning. The installation procedure is split to many scripts in-order to isolate failure and facilitate reruns [Need to comment out previous steps in Vagrant file for now].
+
+On the host machine:
+
 ```
 git clone http://github.com/stevage/cartodb-dev
-cd cartodb-dev
 
-# Edit settings file: vim settings
+vim settings # Edit as appropriate
 
 vagrant up
 ```
 
+As CartoDB is pretty heavy, the script takes quite some time to download the required dependencies.
+
 ## After installing
-As CartoDB is pretty heavy, the script takes quite some time to download the required dependencies. Once the provisioning is done, all you are required to do is start CartoDB.
+Once the provisioning is done, all you are required to do is start CartoDB.
 
 ```
 vagrant ssh
