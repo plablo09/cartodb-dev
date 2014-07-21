@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 
-sudo -u postgres pg_dumpall > /tmp/postgres.sql 
-sudo -u postgres pg_dropcluster --stop 9.1 main
-sudo -u postgres pg_createcluster --locale en_US.UTF-8 --start 9.1 main
+sudo -u postgres pg_dumpall > /tmp/postgres.sql
+sudo -u postgres pg_dropcluster --stop 9.3 main
+sudo -u postgres pg_createcluster --locale en_US.UTF-8 --start 9.3 main
 sudo -u postgres psql -f /tmp/postgres.sql
 
 sudo -u postgres createuser --superuser root

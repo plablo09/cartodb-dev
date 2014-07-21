@@ -36,6 +36,7 @@ cd /usr/local/src/cartodb
 
 echo "127.0.0.1 ${USER}.localhost.lan" | sudo tee -a /etc/hosts
 export SUBDOMAIN=$USER
+#bash cartodb/script/create_dev_user
 bundle exec rake rake:db:create
 bundle exec rake rake:db:migrate
 bundle exec rake cartodb:db:create_publicuser
