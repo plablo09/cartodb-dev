@@ -7,12 +7,12 @@ sudo bash <<EOF
 source settings
 setup/deb-deps.sh
 setup/fetch-sources.sh
-setup/postgis-install.sh
+setup/postgres-setup.sh
 setup/postgis-setup.sh
 setup/python-deps.sh
 setup/node-deps.sh
 setup/ruby-deps.sh
-setup/cartodb-setup.sh 
+setup/cartodb-setup.sh
 EOF
 
 
